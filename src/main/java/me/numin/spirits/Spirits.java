@@ -1,5 +1,7 @@
 package me.numin.spirits;
 
+import me.numin.spirits.utilities.versionadapter.ParticleAdapter;
+import me.numin.spirits.utilities.versionadapter.ParticleAdapterFactory;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -22,6 +24,8 @@ public final class Spirits extends JavaPlugin {
 
     public static Spirits plugin;
 
+    private ParticleAdapter particleAdapter;
+
     @Override
     public void onEnable() {
         plugin = this;
@@ -33,6 +37,9 @@ public final class Spirits extends JavaPlugin {
 
         registerListeners();
         registerCollisions();
+
+        ParticleAdapterFactory particleAdapterFactory = new ParticleAdapterFactory();
+        particleAdapter = particleAdapterFactory.getAdapter();
 
         if (Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null) {
             new SpiritPlaceholder().register();
@@ -65,5 +72,9 @@ public final class Spirits extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new Abilities(), this);
         getServer().getPluginManager().registerEvents(new Passives(), this);
         getServer().getPluginManager().registerEvents(new PKEvents(), this);
+    }
+
+    public ParticleAdapter getParticleAdapter() {
+        return this.particleAdapter;
     }
 }

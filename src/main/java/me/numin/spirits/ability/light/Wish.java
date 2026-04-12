@@ -1,5 +1,6 @@
 package me.numin.spirits.ability.light;
 
+import me.numin.spirits.utilities.Methods;
 import org.bukkit.Location;
 import org.bukkit.Sound;
 import org.bukkit.attribute.Attribute;
@@ -89,7 +90,7 @@ public class Wish extends LightAbility {
 			if (System.currentTimeMillis() > time + chargeTime) {
 				if (!wished) {
 					charged = true;
-					ParticleEffect.SPELL_INSTANT.display(player.getLocation(), 5, 0.2F, 0.2F, 0.2F, 0.1F);
+					Methods.displaySpellInstantParticle(player.getLocation(), 5, 0.2F, 0.2F, 0.2F, 0.1F);
 				}
 			} else {
 				ParticleEffect.ENCHANTMENT_TABLE.display(player.getLocation().add(0, 1, 0), 5, 0.5F, 0.5F, 0.5F, 0.2F);

@@ -89,7 +89,7 @@ public class Vanish extends SpiritAbility {
         if (player.isSneaking()) {
             if (System.currentTimeMillis() > getStartTime() + chargeTime) isCharged = true;
             else if (new Random().nextInt(particleFrequency) == 0)
-                player.getWorld().spawnParticle(Particle.DRAGON_BREATH, player.getLocation().add(0, 1, 0), 1, 0, 0, 0, 0.09);
+                player.getWorld().spawnParticle(Particle.DRAGON_BREATH, player.getLocation().add(0, 1, 0), 1, 0, 0, 0, 0,  0.09f);
         } else if (!isCharged) {
             remove();
         }

@@ -5,6 +5,7 @@ import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
 
+import me.numin.spirits.utilities.Methods;
 import org.bukkit.Location;
 import org.bukkit.Sound;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -143,7 +144,7 @@ public class Sanctuary extends LightAbility implements ComboAbility {
 		        double z = size * Math.sin(angle + rotation);
 		        Location loc = origin.clone();
 		        loc.add(x, 0, z);
-		        ParticleEffect.SPELL_INSTANT.display(loc, 3, 0F, 0F, 0F, 0F);
+		        Methods.displaySpellInstantParticle(loc, 3, 0F, 0F, 0F, 0F);
 		        ParticleEffect.ENCHANTMENT_TABLE.display(loc, 3);
 	    	}
 			expandBarriers(size);

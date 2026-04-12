@@ -1,5 +1,6 @@
 package me.numin.spirits.ability.light;
 
+import me.numin.spirits.utilities.Methods;
 import org.bukkit.Location;
 import org.bukkit.Particle;
 import org.bukkit.Sound;
@@ -185,7 +186,7 @@ public class Shelter extends LightAbility {
             double y = 0.9 * (Math.PI * 5 - t) - 10;
             double z2 = size * Math.sin(angle);
             location.add(x2, y, z2);
-            ParticleEffect.SPELL_INSTANT.display(location, 1, 0.5F, 0.5F, 0.5F, 0);
+            Methods.displaySpellInstantParticle(location, 1, 0.5F, 0.5F, 0.5F, 0);
             location.subtract(x2, y, z2);
         }
     }
@@ -199,7 +200,7 @@ public class Shelter extends LightAbility {
             double x = 0.04 * (Math.PI * 4 - angle) * Math.cos(angle + i);
             double z = 0.04 * (Math.PI * 4 - angle) * Math.sin(angle + i);
             location.add(x, 0.1F, z);
-            ParticleEffect.SPELL_INSTANT.display(location, 1, 0, 0, 0, 0);
+            Methods.displaySpellInstantParticle(location, 1, 0, 0, 0, 0);
             location.subtract(x, 0.1F, z);
         }
     }

@@ -90,7 +90,7 @@ public class Onslaught extends DarkAbility {
 	public void progress() {
 		if (player.isSneaking()) {
 			ParticleEffect.SPELL_WITCH.display(player.getLocation().add(0, 1, 0), 5, 0.2F, 0.2F, 0.2F, 1F);
-			ParticleEffect.DRAGON_BREATH.display(player.getLocation().add(0, 1, 0), 5, 0F, 0F, 0F, 0.05F);
+			ParticleEffect.DRAGON_BREATH.display(player.getLocation().add(0, 1, 0), 5, 0F, 0F, 0F, 0,0.05F);
 			
 			onslaught();
 		} else {

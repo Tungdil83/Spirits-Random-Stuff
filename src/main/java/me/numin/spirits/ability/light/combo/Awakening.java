@@ -3,6 +3,7 @@ package me.numin.spirits.ability.light.combo;
 import java.util.ArrayList;
 import java.util.Random;
 
+import me.numin.spirits.utilities.Methods;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Sound;
@@ -165,7 +166,7 @@ public class Awakening extends LightAbility implements ComboAbility {
 					// final TempBlock temp = new TempBlock(block, Material.BARRIER);
 					
 					if (enableParticles) {
-						ParticleEffect.SPELL_INSTANT.display(block.getLocation().add(0, 1, 0), 3, 0.2F, 0.2F, 0.2F, 0.2F);
+						Methods.displaySpellInstantParticle(block.getLocation().add(0, 1, 0), 3, 0.2F, 0.2F, 0.2F, 0.2F);
 					}
 					
 				//	tempBlocks.add(temp);
@@ -174,7 +175,7 @@ public class Awakening extends LightAbility implements ComboAbility {
 				for (Material plants : this.plants) {
 					if (block.getType() == plants) {
 						final TempBlock temp = new TempBlock(block, Material.AIR);
-						ParticleEffect.SPELL_INSTANT.display(block.getLocation().add(0, 1, 0), 3, 0.2F, 0.2F, 0.2F, 0.2F);
+						Methods.displaySpellInstantParticle(block.getLocation().add(0, 1, 0), 3, 0.2F, 0.2F, 0.2F, 0.2F);
 						
 						tempBlocks.add(temp);
 					}
@@ -333,7 +334,7 @@ public class Awakening extends LightAbility implements ComboAbility {
 		}
 		
 		for (Entity entity : entities) {
-			ParticleEffect.SPELL_INSTANT.display(entity.getLocation().add(0, 1, 0), 10, 0.2F, 0.2F, 0.2F, 0.2F);
+			Methods.displaySpellInstantParticle(entity.getLocation().add(0, 1, 0), 10, 0.2F, 0.2F, 0.2F, 0.2F);
 			ParticleEffect.ENCHANTMENT_TABLE.display(entity.getLocation(), 20, 0.2F, 0.2F, 0.2F, 0.2F);
 			player.getWorld().playSound(entity.getLocation(), Sound.ENTITY_ENDERMAN_TELEPORT, 0.5F, 0.5F);
 			entity.remove();

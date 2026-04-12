@@ -1,5 +1,6 @@
 package me.numin.spirits.ability.lightspirit.passive;
 
+import me.numin.spirits.utilities.Methods;
 import org.bukkit.Location;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -92,7 +93,7 @@ public class Afterglow extends LightAbility implements PassiveAbility {
 			return;
 		} else {
 			ParticleEffect.ENCHANTMENT_TABLE.display(location, 1, 1F, 1F, 1F, 0F);
-			ParticleEffect.SPELL_INSTANT.display(location, 1);
+			Methods.displaySpellInstantParticle(location, 1, 0, 0, 0, 0F);
 			//System.out.println("Triggered Afterglow 2");
 			for (Entity entity : GeneralMethods.getEntitiesAroundPoint(location, 1)) {
 				if (entity instanceof LivingEntity) {

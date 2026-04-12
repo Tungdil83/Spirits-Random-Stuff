@@ -159,7 +159,7 @@ public class PaintChangeColor extends SpiritAbility {
 
 	/**
 	 * Gets the color of the provided material
-	 * @param material The material
+	 * @param clickedMaterial The material
 	 * @return The color in RGB/int
 	 */
 	public static int getColor(Material clickedMaterial) {

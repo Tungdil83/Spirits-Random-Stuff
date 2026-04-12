@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
+import me.numin.spirits.utilities.Methods;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Particle;
@@ -237,7 +238,7 @@ public class Enlightenment extends LightAbility {
                 l.add(x, y, z);
     	        
     	        if (this.random.nextInt(10) == 0) {
-					l.getWorld().spawnParticle(Particle.INSTANT_EFFECT, l, 1, 0F, 0F, 0F, 0F);		
+					Methods.displaySpellInstantParticle(l, 1, 0F, 0F, 0F, 0F);
     	        }
     	        
     	        for (Entity entity : GeneralMethods.getEntitiesAroundPoint(l, 1.85)) {
@@ -289,7 +290,7 @@ public class Enlightenment extends LightAbility {
 	        double z = size * Math.sin(angle + rotation);
 	        Location loc = location.clone();
 	        loc.add(x, 0, z);
-			loc.getWorld().spawnParticle(Particle.INSTANT_EFFECT, loc, 1, 0F, 0F, 0F, 0F);		
+			Methods.displaySpellInstantParticle(loc, 1, 0F, 0F, 0F, 0F);
     	}
 	}
 	
@@ -313,8 +314,8 @@ public class Enlightenment extends LightAbility {
 			Location loc = baseLoc.add(x, y, z);
 			Location negLoc = baseLoc.add(-x, y, -z);
 
-			loc.getWorld().spawnParticle(Particle.INSTANT_EFFECT, loc, 1, 0F, 0F, 0F, 0F);
-			negLoc.getWorld().spawnParticle(Particle.INSTANT_EFFECT, negLoc, 1, 0F, 0F, 0F, 0F);	
+			Methods.displaySpellInstantParticle(loc, 1, 0F, 0F, 0F, 0F);
+			Methods.displaySpellInstantParticle(negLoc, 1, 0F, 0F, 0F, 0F);
 		}
 	}
 	

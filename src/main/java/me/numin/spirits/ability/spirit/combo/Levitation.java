@@ -91,7 +91,7 @@ public class Levitation extends SpiritAbility implements ComboAbility {
 
     private void playParticles() {
         Location location = player.getLocation().add(0, 1, 0);
-        location.getWorld().spawnParticle(Particle.DRAGON_BREATH, location, 1, 0.3, 0.3, 0.3, 0.01);
+        location.getWorld().spawnParticle(Particle.DRAGON_BREATH, location, 1, 0.3, 0.3, 0.3, 0,0.01f);
         Methods.playSpiritParticles(player, location, 0.4, 0.6, 0.4, 0, 1);
     }
 

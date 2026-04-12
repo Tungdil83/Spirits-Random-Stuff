@@ -3,6 +3,7 @@ package me.numin.spirits.utilities;
 import java.util.ArrayList;
 import java.util.List;
 
+import me.numin.spirits.Spirits;
 import org.bukkit.Location;
 import org.bukkit.Particle;
 import org.bukkit.Particle.DustOptions;
@@ -53,7 +54,7 @@ public class Methods {
      */
     public static void animateVanish(Player player) {
         Location location = player.getLocation().add(0, 1, 0);
-        player.getWorld().spawnParticle(Particle.DRAGON_BREATH, location, 20, 0, 0, 0, 0.09);
+        player.getWorld().spawnParticle(Particle.DRAGON_BREATH, location, 20, 0, 0, 0, 0, 0.09f);
         player.getWorld().spawnParticle(Particle.PORTAL, location, 30, 0, 0, 0, 2);
         playSpiritParticles(player, location, 0.5, 0.5, 0.5, 0, 5);
     }
@@ -199,4 +200,18 @@ public class Methods {
         }
         return false;
     }
+
+    /**
+     * Display Particles at specific Location, uses ParticleAdapter for Version Compatiblity
+     * @param location Location to spawn the particle
+     * @param amount how many of the particle to spaw
+     * @param offsetX random offset on the x axis
+     * @param offsetY random offset on the y axis
+     * @param offsetZ random offset on the z axis
+     * @param extra extra data to affect the particle, usually affects speed or does nothing
+     */
+    public static void displaySpellInstantParticle(Location location, int amount, double offsetX, double offsetY, double offsetZ, double extra) {
+        Spirits.getInstance().getParticleAdapter().displaySpellInstantParticle(location, amount, offsetX, offsetY, offsetZ, extra);
+    }
+
 }

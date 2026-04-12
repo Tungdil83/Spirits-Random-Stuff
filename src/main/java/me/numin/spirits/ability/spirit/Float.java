@@ -1,5 +1,6 @@
 package me.numin.spirits.ability.spirit;
 
+import me.numin.spirits.utilities.Methods;
 import org.bukkit.Location;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
@@ -52,7 +53,7 @@ public class Float extends SpiritAbility {
 			ParticleEffect.SPELL_WITCH.display(player.getLocation(), 5, 0.2F, 0.2F, 0.2F, 0.2F);
 			
 		} else if (bPlayer.hasElement(lightSpirit)) {
-			ParticleEffect.SPELL_INSTANT.display(player.getLocation(), 5, 0.2F, 0.2F, 0.2F, 0.2F);
+			Methods.displaySpellInstantParticle(player.getLocation(), 5, 0.2F, 0.2F, 0.2F, 0.2F);
 		} else {
 			ParticleEffect.CRIT_MAGIC.display(player.getLocation(), 5, 0.2F, 0.2F, 0.2F, 0.2F);
 		}

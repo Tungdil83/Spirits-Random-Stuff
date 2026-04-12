@@ -2,6 +2,7 @@ package me.numin.spirits.ability.light;
 
 import java.util.Random;
 
+import me.numin.spirits.utilities.Methods;
 import org.bukkit.Location;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
@@ -78,7 +79,7 @@ public class LightBeamCharge extends LightAbility {
 		if (player.isSneaking()) {
 			if (System.currentTimeMillis() > time + chargeTime) {
 				charged = true;
-				ParticleEffect.SPELL_INSTANT.display(player.getLocation(), 5, 0F, 0.2F, 0F, 0.05F);
+				Methods.displaySpellInstantParticle(player.getLocation(), 5, 0F, 0.2F, 0F, 0.05F);
 			} else {
 				ParticleEffect.ENCHANTMENT_TABLE.display(player.getLocation().add(0, 1, 0), 5, 0.3F, 0.3F, 0.3F, 0.2F);
 			}

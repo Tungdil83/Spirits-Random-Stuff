@@ -124,7 +124,7 @@ public class DarkBlast extends DarkAbility {
             if (target instanceof LivingEntity && !target.getUniqueId().equals(player.getUniqueId()) &&
                     !(target instanceof ArmorStand)) {
                 DamageHandler.damageEntity(target, this.damage, this);
-                player.getWorld().spawnParticle(Particle.DRAGON_BREATH, target.getLocation().add(0, 1, 0), 10, 0, 0, 0, 0.2);
+                player.getWorld().spawnParticle(Particle.DRAGON_BREATH, target.getLocation().add(0, 1, 0), 10, 0, 0, 0,0,  0.2f);
                 remove();
             }
         }
@@ -193,7 +193,7 @@ public class DarkBlast extends DarkAbility {
         player.getWorld().spawnParticle(Particle.DUST, location, 2, 0.2, 0.2, 0.2, 0, black);
         if (healing) player.getWorld().spawnParticle(Particle.DUST, location, 2, 0.2, 0.2, 0.2, 0, purple);
         if (burst) {
-            player.getWorld().spawnParticle(Particle.DRAGON_BREATH, location, 10, 0, 0, 0, 0.1);
+            player.getWorld().spawnParticle(Particle.DRAGON_BREATH, location, 10, 0, 0, 0, 0,  0.1f);
             burst = false;
         }
     }

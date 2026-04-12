@@ -1,5 +1,6 @@
 package me.numin.spirits.ability.lightspirit.passive;
 
+import me.numin.spirits.utilities.Methods;
 import org.bukkit.Location;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
@@ -72,7 +73,7 @@ public class WishfulThinking extends LightAbility implements PassiveAbility {
 	public void progress() {
 		
 		ParticleEffect.HEART.display(player.getLocation().add(0, 2, 0), 1, 0F, 0F, 0F, 0F);
-		ParticleEffect.SPELL_INSTANT.display(player.getLocation().add(0, 1, 0), 5, 0.3F, 0.3F, 0.3F, 0.3F);
+		Methods.displaySpellInstantParticle(player.getLocation().add(0, 1, 0), 5, 0.3F, 0.3F, 0.3F, 0.3F);
 		player.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, regenDuration, regenPower));
 
 		bPlayer.addCooldown(this);
