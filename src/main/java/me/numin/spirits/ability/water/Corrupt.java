@@ -314,7 +314,7 @@ public class Corrupt extends WaterAbility {
                 //f7f2f6
                 for (int i = -180; i < 180; i += 10) {
                     target.addPotionEffect(new PotionEffect(PotionEffectType.SLOWNESS, 300, 128));
-                    target.addPotionEffect(new PotionEffect(PotionEffectType.JUMP_BOOST, 300, 128));
+//                    target.addPotionEffect(new PotionEffect(PotionEffectType.JUMP_BOOST, 300, 128)); Disabled because of issue with high jumping while corruption
                 }
                 return;
             }
