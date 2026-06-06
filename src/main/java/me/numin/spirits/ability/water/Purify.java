@@ -274,7 +274,7 @@ public class Purify extends WaterAbility {
                 }
                 for (int i = -180; i < 180; i += 10) {
                     target.addPotionEffect(new PotionEffect(PotionEffectType.SLOWNESS, 300, 128));
-                    target.addPotionEffect(new PotionEffect(PotionEffectType.JUMP_BOOST, 300, 128));
+//                    target.addPotionEffect(new PotionEffect(PotionEffectType.JUMP_BOOST, 300, 128)); Disabled because of issues when players jump while affected with Purify
                 }
                 return;
             }
